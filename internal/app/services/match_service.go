@@ -21,7 +21,7 @@ func (m *MatchService) AddMatches(matches []models.Match) error {
 
 		err := m.repo.AddMatch(&matches[i])
 		if err != nil {
-			m.lgr.Fatalf("AddMatches error:%v", err)
+			m.lgr.Printf("AddMatches error:%v", err)
 			return err
 		}
 	}
@@ -32,7 +32,7 @@ func (m *MatchService) AddMatches(matches []models.Match) error {
 func (m *MatchService) GetAllMatches() ([]models.Match, error) {
 	matches, err := m.repo.GetAllMatches()
 	if err != nil {
-		m.lgr.Fatalf("GetAllMatches error:%v", err)
+		m.lgr.Printf("GetAllMatches error:%v", err)
 		return nil, err
 	}
 	return matches, nil
@@ -41,7 +41,7 @@ func (m *MatchService) GetAllMatches() ([]models.Match, error) {
 func (m *MatchService) GetAllMatchesWithStatistics() ([]models.Match, error) {
 	matches, err := m.repo.GetAllMatchesWithStatistics()
 	if err != nil {
-		m.lgr.Fatalf("GetAllMatches error:%v", err)
+		m.lgr.Printf("GetAllMatches error:%v", err)
 		return nil, err
 	}
 	return matches, nil

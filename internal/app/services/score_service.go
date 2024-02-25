@@ -19,7 +19,7 @@ func NewScoreService(lgr *log.Logger, repo repositories.ScoreRepositoryInterface
 func (s *ScoreService) AddScore(score *models.Score) error {
 	err := s.repo.AddScore(score)
 	if err != nil {
-		s.lgr.Fatalf("AddScores error:%v", err)
+		s.lgr.Printf("AddScores error:%v", err)
 		return err
 	}
 	return nil

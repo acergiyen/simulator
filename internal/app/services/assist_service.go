@@ -19,7 +19,7 @@ func NewAssistService(lgr *log.Logger, repo repositories.AssistRepositoryInterfa
 func (s *AssistService) AddAssist(assist *models.Assist) error {
 	err := s.repo.AddAssist(assist)
 	if err != nil {
-		s.lgr.Fatalf("AddScores error:%v", err)
+		s.lgr.Printf("AddScores error:%v", err)
 		return err
 	}
 	return nil

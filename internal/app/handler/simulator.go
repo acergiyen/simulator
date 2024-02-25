@@ -30,7 +30,7 @@ func NewSimulatorHandler(lgr *log.Logger, cfg *config.Config, teamService *servi
 func (s *Simulator) Simulate(w http.ResponseWriter) {
 	teams, err := s.teamService.GetAllTeams()
 	if err != nil {
-		s.lgr.Fatalf("err: %v", err)
+		s.lgr.Printf("err: %v", err)
 		return
 	}
 
@@ -41,7 +41,7 @@ func (s *Simulator) Simulate(w http.ResponseWriter) {
 	s.startMatches(matches)
 	htmlContent, err := ioutil.ReadFile("../../template/index.html")
 	if err != nil {
-		s.lgr.Fatalf("Error reading HTML file: %v", err)
+		s.lgr.Printf("Error reading HTML file: %v", err)
 		return
 	}
 

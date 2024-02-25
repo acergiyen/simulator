@@ -19,7 +19,7 @@ func NewTeamService(lgr *log.Logger, repo repositories.TeamRepositoryInterface) 
 func (t *TeamService) GetAllTeams() ([]models.Team, error) {
 	teams, err := t.repo.GetAllTeams()
 	if err != nil {
-		t.lgr.Fatalf("GetAllTeams error :%v", err)
+		t.lgr.Printf("GetAllTeams error :%v", err)
 		return nil, err
 	}
 	return teams, nil
