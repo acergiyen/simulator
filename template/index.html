@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NBA Scores</title>
+</head>
+
+<body>
+    <h1>NBA Scores</h1>
+    <table border="1">
+        <tr>
+            <th>Match</th>
+            <th>Scores</th>
+            <th>Assists</th>
+        </tr>
+        {{range .Matches}}
+        <tr>
+            <td>Match between Team {{.HomeTeamID}} and Team {{.AwayTeamID}}</td>
+            <td>
+                <ul>
+                    {{range .Scores}}
+                    <li>Player {{.PlayerID}} scored {{.Score}} points</li>
+                    {{end}}
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    {{range .Assists}}
+                    <li>Player {{.PlayerID}} made {{.AssistCount}} assists</li>
+                    {{end}}
+                </ul>
+            </td>
+        </tr>
+        {{end}}
+    </table>
+
+    <h2>Player Statistics</h2>
+    <table border="1">
+        <tr>
+            <th>Player</th>
+            <th>Total Score</th>
+            <th>Total Assists</th>
+        </tr>
+        {{range .PlayerStats}}
+        <tr>
+            <td>Player {{.PlayerID}}</td>
+            <td>{{.TotalScore}}</td>
+            <td>{{.TotalAssists}}</td>
+        </tr>
+        {{end}}
+    </table>
+</body>
+
+</html>

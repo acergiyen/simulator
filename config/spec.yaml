@@ -1,0 +1,16 @@
+
+app:
+  name: simulator
+  environment: staging
+  port: "8080"
+
+database:
+  host: postgres
+  port: 5432
+  name: postgres
+  username: acergiyen
+  password: 123456  
+
+simulator:
+  updateCount: 48
+  simulatedTime: 5
