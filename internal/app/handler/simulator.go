@@ -151,7 +151,7 @@ func (s *Simulator) updateScore(match models.Match) {
 func (s *Simulator) updateAssist(match models.Match) {
 	// Randomly select a player
 	playerID := match.HomeTeam.Players[rand.Intn(len(match.HomeTeam.Players))].ID
-	assistCount := rand.Intn(2) + 1
+	assistCount := 1
 
 	s.lgr.Printf("Match between Team %d and Team %d - Player %d made %d assists at %s\n", match.HomeTeamID, match.AwayTeamID, playerID, assistCount, time.Now().Format("15:04:05"))
 	// You can add assist information to the database here.
